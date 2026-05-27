@@ -1,1 +1,0 @@
-# rotasepeti-pixel.github.io
