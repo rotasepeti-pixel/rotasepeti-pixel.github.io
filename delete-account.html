@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bütçem - Hesap Silme</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0d1a0d;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: #1a2f1a;
+      border: 1px solid #2d5a2d;
+      border-radius: 24px;
+      padding: 40px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+    }
+    .logo { font-size: 48px; margin-bottom: 16px; }
+    h1 { font-size: 24px; font-weight: 800; margin-bottom: 8px; color: #fff; }
+    .subtitle { color: #4ade80; font-size: 14px; margin-bottom: 32px; }
+    .info {
+      background: #0d2010;
+      border: 1px solid #22c55e33;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+    .info p { font-size: 14px; color: #aaa; line-height: 1.6; margin-bottom: 8px; }
+    .info p:last-child { margin-bottom: 0; }
+    .steps { text-align: left; margin-bottom: 24px; }
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .step-num {
+      background: #22c55e22;
+      border: 1px solid #22c55e44;
+      color: #4ade80;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .step-text { font-size: 14px; color: #ccc; line-height: 1.5; padding-top: 4px; }
+    .email-btn {
+      display: block;
+      background: #22c55e;
+      color: #fff;
+      text-decoration: none;
+      padding: 16px 24px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 12px;
+      transition: background 0.2s;
+    }
+    .email-btn:hover { background: #16a34a; }
+    .note { font-size: 12px; color: #666; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">💰</div>
+    <h1>Hesap Silme Talebi</h1>
+    <p class="subtitle">Bütçem - Akıllı Para Yönetimi</p>
+
+    <div class="info">
+      <p>📋 Hesabınızı sildiğinizde aşağıdaki veriler kalıcı olarak silinir:</p>
+      <p>• Tüm gelir ve gider işlemleri</p>
+      <p>• Hesap ve birikim bilgileri</p>
+      <p>• Hedef ve bütçe verileri</p>
+      <p>• Google hesap bağlantısı</p>
+    </div>
+
+    <div class="steps">
+      <p style="font-weight:700; margin-bottom:16px; color:#fff;">Uygulama içinden silmek için:</p>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">Uygulamayı açın ve <strong>Ayarlar</strong> sayfasına gidin</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Veri</strong> bölümünden <strong>Tüm Verileri Sil</strong> seçeneğine dokunun</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">Google hesabınızdan <strong>Çıkış Yap</strong> butonuna dokunun</div>
+      </div>
+    </div>
+
+    <a href="mailto:butcemapp@gmail.com?subject=Hesap Silme Talebi&body=Merhaba, hesabımın ve tüm verilerimin silinmesini talep ediyorum. Google hesabım: " class="email-btn">
+      📧 E-posta ile Talep Gönder
+    </a>
+    <p class="note">Talebiniz 7 iş günü içinde işleme alınır.</p>
+  </div>
+</body>
+</html>
