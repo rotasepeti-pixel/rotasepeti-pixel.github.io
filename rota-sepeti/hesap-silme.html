@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rota Sepeti · Hesap Silme</title>
+<meta name="description" content="Rota Sepeti hesabını ve verilerini silme. Delete your Rota Sepeti account and data.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230B7A83'/%3E%3Cpath d='M21 50H79L72.5 80Q71.6 84 67.5 84H32.5Q28.4 84 27.5 80Z' fill='white'/%3E%3Cpath d='M50 13c-6.4 0-11 4.8-11 10.8 0 8 11 18.2 11 18.2s11-10.2 11-18.2C61 17.8 56.4 13 50 13z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --ground: #F4F8F8; --surface: #FFFFFF; --muted: #E6EFEF; --ink: #10232B;
+    --ink-muted: #4F6369; --line: #DCE7E8; --iznik: #0B7A83; --iznik-strong: #075A61;
+    --iznik-soft: #DDF0F0; --danger: #B4412F; --danger-soft: #FBE7E3; --on-iznik: #FFFFFF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #0B171C; --surface: #12232A; --muted: #1A2E35; --ink: #E4EFF0;
+      --ink-muted: #9DB2B8; --line: #22383F; --iznik: #3FB8C0; --iznik-strong: #7AD3D9;
+      --iznik-soft: #123A3F; --danger: #E8806C; --danger-soft: #3A1E19; --on-iznik: #0B171C;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font: 400 17px/1.65 'Figtree', system-ui, sans-serif; -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--iznik); text-underline-offset: 3px; }
+  a:hover { color: var(--iznik-strong); }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  header.hero { background: var(--iznik); color: #fff; padding: 28px 0 72px; }
+  @media (prefers-color-scheme: dark) { header.hero { background: #0E5E66; } }
+  .bar { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
+  .brand:hover { color: #fff; }
+  .brand svg { width: 44px; height: 44px; flex: none; border-radius: 12px; box-shadow: 0 0 0 2px rgba(255,255,255,.25); }
+  .brand span { font: 800 22px/1 'Bricolage Grotesque', sans-serif; }
+  .lang { display: inline-flex; background: rgba(255,255,255,.14); border-radius: 999px; padding: 4px; }
+  .lang button { font: 600 14px/1 'Figtree', sans-serif; color: #fff; background: transparent; border: 0;
+    border-radius: 999px; padding: 10px 16px; cursor: pointer; min-height: 40px; }
+  .lang button[aria-pressed="true"] { background: #fff; color: #0B5F66; }
+  .hero h1 { font: 800 clamp(32px, 6vw, 48px)/1.05 'Bricolage Grotesque', sans-serif; letter-spacing: -.02em; margin: 44px 0 12px; }
+  .hero p { margin: 0; max-width: 560px; font-size: 18px; color: rgba(255,255,255,.9); }
+  .route { margin-top: 28px; height: 6px;
+    background-image: radial-gradient(circle, #F2B544 2.2px, transparent 2.6px);
+    background-size: 16px 6px; background-repeat: repeat-x; opacity: .9; }
+  main { margin-top: -44px; padding-bottom: 56px; }
+  section.card { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 26px; margin-bottom: 14px; }
+  .card h2 { margin: 0 0 12px; font: 700 22px/1.2 'Bricolage Grotesque', sans-serif; }
+  ol.steps { list-style: none; counter-reset: s; margin: 0; padding: 0; }
+  ol.steps li { counter-increment: s; display: flex; gap: 14px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  ol.steps li:last-child { border-bottom: 0; }
+  ol.steps li::before { content: counter(s); flex: none; width: 32px; height: 32px; border-radius: 50%;
+    background: var(--iznik-soft); color: var(--iznik); font-weight: 700; display: grid; place-items: center; }
+  .pill { display: inline-block; background: var(--muted); border-radius: 8px; padding: 1px 8px; font-weight: 600; }
+  ul.list { margin: 6px 0; padding-left: 20px; }
+  ul.list li { margin: 4px 0; }
+  ul.list li::marker { color: var(--iznik); }
+  .warn { background: var(--danger-soft); color: var(--ink); border-radius: 14px; padding: 12px 16px; margin-top: 12px; }
+  .warn strong { color: var(--danger); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--iznik);
+    color: var(--on-iznik); text-decoration: none; font-weight: 700; padding: 14px 22px; border-radius: 14px; min-height: 48px; }
+  .btn:hover { background: var(--iznik-strong); color: var(--on-iznik); }
+  .muted { color: var(--ink-muted); font-size: 15px; }
+  footer { text-align: center; color: var(--ink-muted); font-size: 14px; padding: 8px 0 40px; }
+  [hidden] { display: none !important; }
+  @media (max-width: 560px) { body { font-size: 16px; } section.card { padding: 20px 18px; border-radius: 18px; } .btn { width: 100%; } }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="./">
+        <svg viewBox="0 0 100 100" role="img" aria-label="Rota Sepeti logosu">
+          <rect width="100" height="100" fill="#0B7A83"/>
+          <path d="M30 50 C 30 24, 70 24, 70 50" fill="none" stroke="#F2B544" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="1 8"/>
+          <path d="M50 13 c-6.4 0 -11 4.8 -11 10.8 c0 8 11 18.2 11 18.2 s11 -10.2 11 -18.2 C61 17.8 56.4 13 50 13 z" fill="#fff"/>
+          <circle cx="50" cy="23.8" r="4" fill="#0B7A83"/>
+          <path d="M21 50 H79 L72.5 80 Q71.6 84 67.5 84 H32.5 Q28.4 84 27.5 80 Z" fill="#fff"/>
+          <path d="M24.5 61 H75.5 M26.8 72 H73.2 M40 50 L42 84 M60 50 L58 84" stroke="#0B7A83" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span>Rota Sepeti</span>
+      </a>
+      <div class="lang" role="group" aria-label="Dil / Language">
+        <button type="button" data-lang="tr" aria-pressed="true">Türkçe</button>
+        <button type="button" data-lang="en" aria-pressed="false">English</button>
+      </div>
+    </div>
+    <div data-l="tr">
+      <h1>Hesabını sil</h1>
+      <p>Rota Sepeti hesabını ve tüm verilerini istediğin zaman kalıcı olarak silebilirsin.</p>
+    </div>
+    <div data-l="en" hidden>
+      <h1>Delete your account</h1>
+      <p>You can permanently delete your Rota Sepeti account and all your data at any time.</p>
+    </div>
+    <div class="route" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div data-l="tr" lang="tr">
+    <section class="card">
+      <h2>Uygulamadan sil (anında)</h2>
+      <ol class="steps">
+        <li><span>Rota Sepeti uygulamasını aç ve hesabınla giriş yap.</span></li>
+        <li><span>Alttaki menüden <span class="pill">Profil</span> sekmesine geç.</span></li>
+        <li><span>Sayfanın sonundaki <span class="pill">Hesabımı sil</span> satırına dokun.</span></li>
+        <li><span><span class="pill">Kalıcı olarak sil</span> ile onayla. Hesabın hemen silinir.</span></li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Uygulamaya erişemiyorsan</h2>
+      <p>Hesabına kayıtlı e-posta adresinden bize <strong>"Hesap silme"</strong> konulu bir e-posta gönder. Talebini doğrulayıp en geç <strong>30 gün</strong> içinde yerine getiririz.</p>
+      <a class="btn" href="mailto:rotasepeti@gmail.com?subject=Hesap%20silme&amp;body=Rota%20Sepeti%20hesab%C4%B1m%C4%B1n%20ve%20t%C3%BCm%20verilerimin%20silinmesini%20istiyorum.%0AKay%C4%B1tl%C4%B1%20e-posta%20adresim%3A%20">rotasepeti@gmail.com adresine yaz</a>
+    </section>
+
+    <section class="card">
+      <h2>Neler silinir?</h2>
+      <ul class="list">
+        <li>Hesap ve giriş bilgilerin (ad, e-posta, profil fotoğrafı, avatar)</li>
+        <li>Kaydettiğin ve beğendiğin yerler, Türkiye Haritam ziyaretlerin</li>
+        <li>Oluşturduğun geziler, gezi üyelikleri ve davetler</li>
+        <li>Yazdığın yorumlar ve kazandığın rozetler</li>
+        <li>Bildirim aboneliğin</li>
+      </ul>
+      <p class="muted">Yönetim amacıyla tutulan uygunsuz içerik bildirimlerinin seninle olan bağlantısı kaldırılır; bildirimin kendisi kişisel veri içermeden kalabilir. Sunucu yedeklerindeki kopyalar en geç 30 gün içinde kendiliğinden silinir.</p>
+      <p class="warn"><strong>Dikkat:</strong> Silme işlemi geri alınamaz. Aynı e-postayla yeniden kayıt olabilirsin, ama eski verilerin geri gelmez.</p>
+    </section>
+
+    <p class="muted" style="text-align:center"><a href="./">Gizlilik politikası ve kullanım koşulları</a></p>
+  </div>
+
+  <div data-l="en" lang="en" hidden>
+    <section class="card">
+      <h2>Delete in the app (instant)</h2>
+      <ol class="steps">
+        <li><span>Open the Rota Sepeti app and sign in.</span></li>
+        <li><span>Go to the <span class="pill">Profile</span> tab in the bottom menu.</span></li>
+        <li><span>Tap <span class="pill">Delete my account</span> at the end of the page.</span></li>
+        <li><span>Confirm with <span class="pill">Delete permanently</span>. Your account is deleted immediately.</span></li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>If you cannot access the app</h2>
+      <p>Email us from your registered address with the subject <strong>"Account deletion"</strong>. We will verify and complete your request within <strong>30 days</strong>.</p>
+      <a class="btn" href="mailto:rotasepeti@gmail.com?subject=Account%20deletion&amp;body=Please%20delete%20my%20Rota%20Sepeti%20account%20and%20all%20my%20data.%0ARegistered%20email%3A%20">Email rotasepeti@gmail.com</a>
+    </section>
+
+    <section class="card">
+      <h2>What is deleted?</h2>
+      <ul class="list">
+        <li>Your account and sign-in details (name, email, profile photo, avatar)</li>
+        <li>Places you saved and liked, your My Turkey Map visits</li>
+        <li>Trips you created, trip memberships and invites</li>
+        <li>Reviews you wrote and badges you earned</li>
+        <li>Your notification subscription</li>
+      </ul>
+      <p class="muted">Content reports kept for moderation are unlinked from you and may remain without personal data. Copies in server backups are removed automatically within 30 days.</p>
+      <p class="warn"><strong>Note:</strong> Deletion cannot be undone. You can sign up again with the same email, but your old data will not come back.</p>
+    </section>
+
+    <p class="muted" style="text-align:center"><a href="./?lang=en">Privacy policy and terms of use</a></p>
+  </div>
+</main>
+
+<footer>© 2026 Rota Sepeti</footer>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.lang button');
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.title = lang === 'en' ? 'Rota Sepeti · Delete account' : 'Rota Sepeti · Hesap Silme';
+      document.querySelectorAll('[data-l]').forEach(function (el) { el.hidden = el.getAttribute('data-l') !== lang; });
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    }
+    buttons.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); history.replaceState(null, '', '?lang=' + b.dataset.lang); }); });
+    var q = new URLSearchParams(location.search).get('lang');
+    var initial = q || ((navigator.language || 'tr').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en');
+    setLang(initial === 'en' ? 'en' : 'tr');
+  })();
+</script>
+</body>
+</html>

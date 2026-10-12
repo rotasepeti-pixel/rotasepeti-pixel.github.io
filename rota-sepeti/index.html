@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rota Sepeti · Gizlilik Politikası</title>
+<meta name="description" content="Rota Sepeti gizlilik politikası ve kullanım koşulları. Rota Sepeti privacy policy and terms of use.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230B7A83'/%3E%3Cpath d='M21 50H79L72.5 80Q71.6 84 67.5 84H32.5Q28.4 84 27.5 80Z' fill='white'/%3E%3Cpath d='M50 13c-6.4 0-11 4.8-11 10.8 0 8 11 18.2 11 18.2s11-10.2 11-18.2C61 17.8 56.4 13 50 13z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --ground: #F4F8F8; --surface: #FFFFFF; --muted: #E6EFEF; --ink: #10232B;
+    --ink-muted: #4F6369; --line: #DCE7E8; --iznik: #0B7A83; --iznik-strong: #075A61;
+    --iznik-soft: #DDF0F0; --saffron: #D98E1F; --on-iznik: #FFFFFF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #0B171C; --surface: #12232A; --muted: #1A2E35; --ink: #E4EFF0;
+      --ink-muted: #9DB2B8; --line: #22383F; --iznik: #3FB8C0; --iznik-strong: #7AD3D9;
+      --iznik-soft: #123A3F; --saffron: #F0B04E; --on-iznik: #0B171C;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font: 400 17px/1.65 'Figtree', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--iznik); text-underline-offset: 3px; }
+  a:hover { color: var(--iznik-strong); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+
+  header.hero { background: var(--iznik); color: #fff; padding: 28px 0 72px; }
+  @media (prefers-color-scheme: dark) { header.hero { background: #0E5E66; } }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand svg { width: 44px; height: 44px; flex: none; border-radius: 12px; box-shadow: 0 0 0 2px rgba(255,255,255,.25); }
+  .brand span { font: 800 22px/1 'Bricolage Grotesque', sans-serif; letter-spacing: -.01em; }
+  .bar { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .lang { display: inline-flex; background: rgba(255,255,255,.14); border-radius: 999px; padding: 4px; }
+  .lang button {
+    font: 600 14px/1 'Figtree', sans-serif; color: #fff; background: transparent;
+    border: 0; border-radius: 999px; padding: 10px 16px; cursor: pointer; min-height: 40px;
+  }
+  .lang button[aria-pressed="true"] { background: #fff; color: #0B5F66; }
+  .hero h1 {
+    font: 800 clamp(34px, 6vw, 54px)/1.05 'Bricolage Grotesque', sans-serif;
+    letter-spacing: -.02em; margin: 48px 0 12px;
+  }
+  .hero p.lead { margin: 0; max-width: 620px; font-size: 18px; color: rgba(255,255,255,.9); }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+  .chip {
+    font: 600 13px/1 'Figtree', sans-serif; background: rgba(255,255,255,.16); color: #fff;
+    padding: 9px 12px; border-radius: 999px;
+  }
+  .route { margin-top: 28px; height: 6px;
+    background-image: radial-gradient(circle, #F2B544 2.2px, transparent 2.6px);
+    background-size: 16px 6px; background-repeat: repeat-x; opacity: .9; }
+
+  main { margin-top: -44px; padding-bottom: 56px; }
+  nav.toc {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 22px;
+    padding: 18px 20px; margin-bottom: 18px;
+  }
+  nav.toc ol { margin: 0; padding: 0; list-style: none; display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 6px 18px; }
+  nav.toc a { display: flex; gap: 10px; align-items: baseline; padding: 6px 0; text-decoration: none; color: var(--ink); font-weight: 500; }
+  nav.toc a:hover { color: var(--iznik); }
+  nav.toc .n { font: 700 13px/1 'Figtree', sans-serif; color: var(--iznik); min-width: 18px; }
+
+  section.card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 22px;
+    padding: 26px 26px 22px; margin-bottom: 14px; scroll-margin-top: 16px;
+  }
+  .card h2 { display: flex; align-items: center; gap: 12px; margin: 0 0 10px;
+    font: 700 23px/1.2 'Bricolage Grotesque', sans-serif; letter-spacing: -.01em; }
+  .card h2 .ico { width: 38px; height: 38px; border-radius: 12px; background: var(--iznik-soft);
+    color: var(--iznik); display: grid; place-items: center; flex: none; }
+  .card h2 .ico svg { width: 20px; height: 20px; }
+  .card p { margin: 10px 0; }
+  .card ul { margin: 8px 0; padding-left: 20px; }
+  .card li { margin: 6px 0; }
+  .card li::marker { color: var(--iznik); }
+  .note { background: var(--iznik-soft); border-radius: 14px; padding: 12px 16px; margin: 12px 0 4px; }
+  .highlight { border: 2px solid var(--iznik); }
+  .steps { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 12px 0; }
+  .step { background: var(--muted); border-radius: 10px; padding: 8px 12px; font-weight: 600; }
+  .arrow { color: var(--iznik); font-weight: 700; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 16px; }
+  th, td { text-align: start; padding: 11px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-muted); }
+  td:first-child { font-weight: 600; white-space: nowrap; }
+  .table-box { overflow-x: auto; }
+  .contact { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px; background: var(--iznik); color: var(--on-iznik);
+    text-decoration: none; font-weight: 700; padding: 13px 20px; border-radius: 14px; min-height: 48px;
+  }
+  .btn:hover { background: var(--iznik-strong); color: var(--on-iznik); }
+  footer { text-align: center; color: var(--ink-muted); font-size: 14px; padding: 8px 0 40px; }
+  [hidden] { display: none !important; }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    section.card { padding: 20px 18px 16px; border-radius: 18px; }
+    td:first-child { white-space: normal; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="bar">
+      <div class="brand">
+        <svg viewBox="0 0 100 100" role="img" aria-label="Rota Sepeti logosu">
+          <rect width="100" height="100" fill="#0B7A83"/>
+          <path d="M30 50 C 30 24, 70 24, 70 50" fill="none" stroke="#F2B544" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="1 8"/>
+          <path d="M50 13 c-6.4 0 -11 4.8 -11 10.8 c0 8 11 18.2 11 18.2 s11 -10.2 11 -18.2 C61 17.8 56.4 13 50 13 z" fill="#fff"/>
+          <circle cx="50" cy="23.8" r="4" fill="#0B7A83"/>
+          <path d="M21 50 H79 L72.5 80 Q71.6 84 67.5 84 H32.5 Q28.4 84 27.5 80 Z" fill="#fff"/>
+          <path d="M24.5 61 H75.5 M26.8 72 H73.2 M40 50 L42 84 M60 50 L58 84" stroke="#0B7A83" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span>Rota Sepeti</span>
+      </div>
+      <div class="lang" role="group" aria-label="Dil / Language">
+        <button type="button" data-lang="tr" aria-pressed="true">Türkçe</button>
+        <button type="button" data-lang="en" aria-pressed="false">English</button>
+      </div>
+    </div>
+
+    <div data-l="tr">
+      <h1>Gizlilik Politikası ve Kullanım Koşulları</h1>
+      <p class="lead">Hangi verileri neden topladığımızı, kimlerle paylaştığımızı ve haklarını sade bir dille anlatıyoruz.</p>
+      <div class="meta"><span class="chip">Son güncelleme: 12 Ekim 2026</span><span class="chip">Sürüm 2.0</span><span class="chip">Verilerin satılmaz</span></div>
+    </div>
+    <div data-l="en" hidden>
+      <h1>Privacy Policy and Terms of Use</h1>
+      <p class="lead">What data we collect and why, who we share it with, and your rights, in plain language.</p>
+      <div class="meta"><span class="chip">Last updated: 12 October 2026</span><span class="chip">Version 2.0</span><span class="chip">Your data is never sold</span></div>
+    </div>
+    <div class="route" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ===================== TÜRKÇE ===================== -->
+  <div data-l="tr" lang="tr">
+    <nav class="toc" aria-label="İçindekiler">
+      <ol>
+        <li><a href="#tr-1"><span class="n">1</span>Kullanım koşulları</a></li>
+        <li><a href="#tr-2"><span class="n">2</span>Topladığımız veriler</a></li>
+        <li><a href="#tr-3"><span class="n">3</span>Konum</a></li>
+        <li><a href="#tr-4"><span class="n">4</span>Kullandığımız hizmetler</a></li>
+        <li><a href="#tr-5"><span class="n">5</span>Hakların ve hesap silme</a></li>
+        <li><a href="#tr-6"><span class="n">6</span>Çocuklar ve değişiklikler</a></li>
+        <li><a href="#tr-7"><span class="n">7</span>İletişim</a></li>
+      </ol>
+    </nav>
+
+    <section class="card" id="tr-1">
+      <h2><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span>Kullanım koşulları</h2>
+      <p>Rota Sepeti, Türkiye'deki gezilecek yerleri keşfetmeni ve gezi planlamanı sağlayan bir mobil uygulamadır. Uygulamayı kullanarak bu koşulları kabul etmiş olursun.</p>
+      <ul>
+        <li>Yer bilgileri, rotalar, mesafe ve süre tahminleri ile görseller bilgilendirme amaçlıdır. Açılış saatleri, yol ve hava durumu gitmeden önce kontrol edilmelidir.</li>
+        <li>Yorumlarında genel ahlak ve hukuk kurallarına uymanı bekleriz. Uygunsuz, yanıltıcı ya da başkalarının haklarını ihlal eden içerikler bildirim üzerine kaldırılabilir.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="tr-2">
+      <h2><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span>Topladığımız veriler</h2>
+      <p><strong>Misafir olarak</strong> (giriş yapmadan) kullanırsan hesap bilgisi toplanmaz.</p>
+      <p><strong>Giriş yaparsan:</strong></p>
+      <ul>
+        <li><strong>Hesap bilgileri:</strong> adın, e-posta adresin ve (Google ile giriş yaptıysan) profil fotoğrafın.</li>
+        <li><strong>Uygulama içeriğin:</strong> kaydettiğin ve beğendiğin yerler, gezi planların ve gezi ortakların, yazdığın yorumlar, kazandığın rozetler, seçtiğin avatar.</li>
+      </ul>
+      <p><strong>Herkes için:</strong></p>
+      <ul>
+        <li><strong>Bildirim kimliği:</strong> sana anlık bildirim (ör. yeni sürüm, gezi daveti) gönderebilmek için cihazına özel bir kimlik. Bildirimleri uygulamadan ya da telefon ayarlarından kapatabilirsin.</li>
+        <li><strong>Cihaz ayarları:</strong> dil, tema ve benzeri tercihler yalnızca cihazında tutulur.</li>
+      </ul>
+      <p class="note">Kişisel verilerin <strong>satılmaz</strong> ve reklam amacıyla üçüncü taraflara devredilmez.</p>
+    </section>
+
+    <section class="card" id="tr-3">
+      <h2><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.3 7-12a7 7 0 0 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>Konum</h2>
+      <p>Konumunu <strong>yalnızca izin verirsen</strong>, yakınındaki yerleri, mesafeleri ve hava durumunu göstermek için kullanırız. Konumun sunucularımızda <strong>saklanmaz</strong>. İzni istediğin zaman telefon ayarlarından kapatabilirsin; uygulama konumsuz da çalışır.</p>
+    </section>
+
+    <section class="card" id="tr-4">
+      <h2><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg></span>Kullandığımız hizmetler</h2>
+      <div class="table-box">
+        <table>
+          <thead><tr><th scope="col">Hizmet</th><th scope="col">Amaç</th></tr></thead>
+          <tbody>
+            <tr><td>Supabase</td><td>Hesap, veritabanı ve sunucu altyapısı</td></tr>
+            <tr><td>Google ile giriş</td><td>İsteğe bağlı hesap açma ve giriş</td></tr>
+            <tr><td>OneSignal</td><td>Anlık bildirimler</td></tr>
+            <tr><td>MapTiler, OpenStreetMap</td><td>Harita görüntüleri</td></tr>
+            <tr><td>OpenWeather</td><td>Hava durumu</td></tr>
+            <tr><td>Google Play Hizmetleri</td><td>Uygulama içi güncelleme</td></tr>
+            <tr><td>Google AdMob</td><td>Reklam gösterildiğinde. Şu an reklam gösterilmiyor; ileride gösterilirse AB kullanıcılarından önce onay istenir.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Bu hizmetler verileri kendi gizlilik politikalarına göre işler. Veriler aktarım sırasında TLS ile şifrelenir; kullanıcı verilerine erişim, satır düzeyinde güvenlik kurallarıyla yalnızca sahibine açıktır.</p>
+    </section>
+
+    <section class="card highlight" id="tr-5">
+      <h2><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>Hakların ve hesap silme</h2>
+      <p>KVKK ve GDPR kapsamındaki haklarına sahipsin: verilerinin işlenip işlenmediğini öğrenme, bir kopyasını isteme, düzeltilmesini ya da silinmesini talep etme.</p>
+      <p><strong>Hesabını ve tüm verilerini silmek için</strong> uygulamada şu adımları izle:</p>
+      <div class="steps" aria-label="Hesap silme adımları"><span class="step">Profil</span><span class="arrow" aria-hidden="true">→</span><span class="step">Hesabımı sil</span><span class="arrow" aria-hidden="true">→</span><span class="step">Kalıcı olarak sil</span></div>
+      <p>Hesabın, gezilerin, kayıtların, yorumların, rozetlerin ve giriş bilgilerin kalıcı olarak silinir; bu işlem geri alınamaz.</p>
+      <p><a href="hesap-silme.html">Hesap silme sayfası →</a></p>
+      <p class="note">Uygulamaya erişemiyorsan kayıtlı e-posta adresinden <a href="mailto:rotasepeti@gmail.com?subject=Hesap%20silme">rotasepeti@gmail.com</a> adresine "Hesap silme" konulu bir e-posta gönder; talebin 30 gün içinde yerine getirilir.</p>
+    </section>
+
+    <section class="card" id="tr-6">
+      <h2><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Çocuklar ve değişiklikler</h2>
+      <p>Uygulama 13 yaşın altındaki çocuklara yönelik değildir ve bilerek bu yaştaki çocuklardan kişisel veri toplamayız.</p>
+      <p>Bu metni güncelleyebiliriz. Önemli değişiklikleri uygulama içi duyuruyla bildiririz. Güncel sürüm her zaman bu sayfada ve uygulamada <strong>Profil → Gizlilik ve kullanım koşulları</strong> bölümünde yer alır.</p>
+    </section>
+
+    <section class="card" id="tr-7">
+      <h2><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>İletişim</h2>
+      <div class="contact">
+        <p>Her türlü soru ve talebin için bize yazabilirsin.</p>
+        <a class="btn" href="mailto:rotasepeti@gmail.com">rotasepeti@gmail.com</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===================== ENGLISH ===================== -->
+  <div data-l="en" lang="en" hidden>
+    <nav class="toc" aria-label="Contents">
+      <ol>
+        <li><a href="#en-1"><span class="n">1</span>Terms of use</a></li>
+        <li><a href="#en-2"><span class="n">2</span>Data we collect</a></li>
+        <li><a href="#en-3"><span class="n">3</span>Location</a></li>
+        <li><a href="#en-4"><span class="n">4</span>Services we use</a></li>
+        <li><a href="#en-5"><span class="n">5</span>Your rights &amp; account deletion</a></li>
+        <li><a href="#en-6"><span class="n">6</span>Children &amp; changes</a></li>
+        <li><a href="#en-7"><span class="n">7</span>Contact</a></li>
+      </ol>
+    </nav>
+
+    <section class="card" id="en-1">
+      <h2><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span>Terms of use</h2>
+      <p>Rota Sepeti is a mobile app that helps you discover places to visit in Turkey and plan trips. By using the App you agree to these terms.</p>
+      <ul>
+        <li>Place information, routes, distance and time estimates and images are for guidance only. Check opening hours, roads and weather before you go.</li>
+        <li>Reviews must follow general rules of decency and law. Inappropriate or misleading content, or content that infringes others' rights, may be removed when reported.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="en-2">
+      <h2><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span>Data we collect</h2>
+      <p><strong>As a guest</strong> (without signing in) no account details are collected.</p>
+      <p><strong>If you sign in:</strong></p>
+      <ul>
+        <li><strong>Account details:</strong> your name, email address and (if you sign in with Google) profile photo.</li>
+        <li><strong>Your content:</strong> places you save and like, your trip plans and trip companions, reviews you write, badges you earn, the avatar you choose.</li>
+      </ul>
+      <p><strong>For everyone:</strong></p>
+      <ul>
+        <li><strong>Notification ID:</strong> a device-specific ID used to send you push notifications (e.g. new versions, trip invites). You can turn notifications off in the App or in your phone settings.</li>
+        <li><strong>Device settings:</strong> language, theme and similar preferences are stored only on your device.</li>
+      </ul>
+      <p class="note">Your personal data is <strong>never sold</strong> or transferred to third parties for advertising.</p>
+    </section>
+
+    <section class="card" id="en-3">
+      <h2><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.3 7-12a7 7 0 0 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>Location</h2>
+      <p>We use your location <strong>only if you allow it</strong>, to show nearby places, distances and the weather. Your location is <strong>not stored</strong> on our servers. You can turn the permission off at any time in your phone settings; the App also works without location.</p>
+    </section>
+
+    <section class="card" id="en-4">
+      <h2><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg></span>Services we use</h2>
+      <div class="table-box">
+        <table>
+          <thead><tr><th scope="col">Service</th><th scope="col">Purpose</th></tr></thead>
+          <tbody>
+            <tr><td>Supabase</td><td>Accounts, database and server infrastructure</td></tr>
+            <tr><td>Sign in with Google</td><td>Optional sign-up and sign-in</td></tr>
+            <tr><td>OneSignal</td><td>Push notifications</td></tr>
+            <tr><td>MapTiler, OpenStreetMap</td><td>Map tiles</td></tr>
+            <tr><td>OpenWeather</td><td>Weather</td></tr>
+            <tr><td>Google Play services</td><td>In-app updates</td></tr>
+            <tr><td>Google AdMob</td><td>When ads are shown. No ads are shown at the moment; if they are in the future, users in the EU will be asked for consent first.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>These services process data under their own privacy policies. Data is encrypted in transit with TLS, and row-level security rules restrict access to user data to its owner.</p>
+    </section>
+
+    <section class="card highlight" id="en-5">
+      <h2><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>Your rights &amp; account deletion</h2>
+      <p>You have your rights under KVKK and GDPR: to know whether your data is processed, to get a copy, and to request correction or deletion.</p>
+      <p><strong>To delete your account and all your data</strong>, in the App go to:</p>
+      <div class="steps" aria-label="Account deletion steps"><span class="step">Profile</span><span class="arrow" aria-hidden="true">→</span><span class="step">Delete my account</span><span class="arrow" aria-hidden="true">→</span><span class="step">Delete permanently</span></div>
+      <p>Your account, trips, saved places, reviews, badges and sign-in details are permanently deleted; this cannot be undone.</p>
+      <p><a href="hesap-silme.html?lang=en">Account deletion page →</a></p>
+      <p class="note">If you cannot access the App, email <a href="mailto:rotasepeti@gmail.com?subject=Account%20deletion">rotasepeti@gmail.com</a> from your registered address with the subject "Account deletion"; we will complete your request within 30 days.</p>
+    </section>
+
+    <section class="card" id="en-6">
+      <h2><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Children &amp; changes</h2>
+      <p>The App is not directed at children under 13, and we do not knowingly collect personal data from children of that age.</p>
+      <p>We may update this page and will announce significant changes inside the App. The current version is always available here and in the App under <strong>Profile → Privacy &amp; terms</strong>.</p>
+    </section>
+
+    <section class="card" id="en-7">
+      <h2><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>Contact</h2>
+      <div class="contact">
+        <p>For any question or request, write to us.</p>
+        <a class="btn" href="mailto:rotasepeti@gmail.com">rotasepeti@gmail.com</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>© 2026 Rota Sepeti · <span data-l="tr">Türkiye'yi keşfet</span><span data-l="en" hidden>Discover Turkey</span></footer>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.lang button');
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.title = lang === 'en' ? 'Rota Sepeti · Privacy Policy' : 'Rota Sepeti · Gizlilik Politikası';
+      document.querySelectorAll('[data-l]').forEach(function (el) { el.hidden = el.getAttribute('data-l') !== lang; });
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    }
+    buttons.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); history.replaceState(null, '', '?lang=' + b.dataset.lang); }); });
+    var q = new URLSearchParams(location.search).get('lang');
+    var initial = q || ((navigator.language || 'tr').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en');
+    setLang(initial === 'en' ? 'en' : 'tr');
+  })();
+</script>
+</body>
+</html>
